@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    ports:
+      - "6334:6333"  # Expose Qdrant on port 6333
+    volumes:
+      - rule_base_chatbot_data:/qdrant/storage  # Persist data on a volume
+    environment:
+      - QDRANT__SERVICE__PORT=6333  # Define Qdrant service port
+    restart: always  # Restart the container if it crashes or the machine reboots
+
+volumes:
+  qdrant_data:
+    driver: local  # Create a named volume to persist Qdrant data
