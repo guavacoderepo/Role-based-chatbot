@@ -13,5 +13,5 @@ services:
     restart: always  # Restart the container if it crashes or the machine reboots
 
 volumes:
-  qdrant_data:
+  rule_base_chatbot_data:
     driver: local  # Create a named volume to persist Qdrant data
