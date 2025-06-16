@@ -27,5 +27,9 @@ class Conversation(BaseModel):
     date: str
 
 
-class ChartReqest(BaseModel):
+class ChatReqest(BaseModel):
     prompt:str
+
+
+class chatResponse(BaseModel):
+    response: str

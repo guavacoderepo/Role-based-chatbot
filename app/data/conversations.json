@@ -448,5 +448,194 @@
     "prompt": "thank you",
     "response": "You're welcome! If you have any more questions or need further assistance, feel free to ask.",
     "date": "2025-06-12T23:45:58.512047"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is our capmain highlight",
+    "response": "The highlight of the **\"InstantWire Global Expansion\"** campaign was its success in terms of conversions and brand awareness. The campaign led to a 25% increase in traffic to the website and a 12% increase in sign-ups. It involved a total cost of $5 million spent on digital ads, influencer partnerships, and sponsored content, achieving a 3.5x return on investment, with $17.5 million in revenue generated directly from these efforts.",
+    "date": "2025-06-16T23:24:05.783711"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is out Campaign Highlights",
+    "response": "The campaign highlights for Q4 2024 at FinSolve Technologies include:\n\n### Digital Marketing\n- **Social Media Campaigns**: Achieved a 25% engagement rate on platforms like LinkedIn and Instagram, driven by interactive content and influencer partnerships.\n- **Paid Search**: Optimized Google Ads campaigns, resulting in a 12% reduction in cost-per-click (CPC) and a 10% increase in click-through rates (CTR).\n\n### B2B Initiatives\n- **Account-Based Marketing**: Targeted 50 high-value enterprise accounts, securing 10 new contracts worth $1.2 million in annual recurring revenue.\n- **Industry Events**: Sponsored two major industry conferences, generating 300 qualified leads.\n\n### Customer Retention\n- **Loyalty Program**: Enrolled 50,000 customers in the new loyalty program, with 60% redeeming rewards by quarter-end.\n- **Email Marketing**: Achieved a 35% open rate and 5% conversion rate on retention-focused email campaigns.\n\nThese highlights reflect the comprehensive approach to enhancing engagement, expanding market reach, and improving customer loyalty.",
+    "date": "2025-06-16T23:25:04.271453"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is our performance analysis",
+    "response": "The performance analysis for Q4 2024 at FinSolve Technologies indicates the following:\n\n- **Customer Acquisition**: On track to meet or exceed the 220,000 new customer target, with 180,000 acquired by mid-December.\n- **Revenue**: Generated $9.5 million in revenue by mid-December, with projections to reach $11 million by quarter-end.\n- **Conversion Rate**: Achieved a 14.2% conversion rate, slightly below the 15.0% target, prompting further optimization in Q1 2025.\n- **ROI**: Preliminary ROI stands at 4.0x, with final calculations pending year-end revenue data.\n\nThis analysis highlights strong progress toward targets and identifies areas for ongoing improvement, particularly in conversion optimization.",
+    "date": "2025-06-16T23:25:56.072986"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "who is Aadhya Kapoor",
+    "response": "Aadhya Kapoor is a Risk Analyst at FinSolve Technologies. Here are her details:\n\n- **Employee ID**: FINEMP1063\n- **Department**: Risk\n- **Email**: aadhya.kapoor@fintechco.com\n- **Location**: Jaipur\n- **Date of Birth**: July 10, 1991\n- **Date of Joining**: October 27, 2021\n- **Manager ID**: FINEMP1004\n- **Salary**: \u20b91,833,641.20\n- **Leave Balance**: 8 days",
+    "date": "2025-06-16T23:29:27.117374"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "talk about work hours and attendance",
+    "response": "The work hours and attendance policy at FinSolve Technologies includes the following:\n\n### Work Hours\n- **Standard Hours**: 9 hours per day (including a 1-hour break), 6 days a week, or 8 hours per day, 5 days a week, as per company policy.\n- **Flexible Timings**: Allowed for eligible roles, subject to manager approval.\n- **Shift Work**: Applicable for certain roles, with a shift allowance as per policy.\n\n### Attendance & Punctuality\n- **Attendance**: Must be recorded daily using biometric, swipe card, or HRMS app.\n- **Late Arrivals/Early Departures**: Must be notified to the manager.\n- **Disciplinary Action**: Three or more late arrivals in a month may attract disciplinary action.\n\n### Time Tracking\n- Employees must accurately record work hours and breaks.\n- The use of company-approved time-tracking tools is mandatory for remote/hybrid roles.\n\n### Overtime & Compensation\n- Overtime is voluntary and paid at double the regular wage rate.\n- Prior approval from a manager is required for overtime.\n- Compensatory time off may be provided in lieu of overtime for certain roles.\n\nThese guidelines ensure efficient management of work hours and maintain a balance between work and personal time for employees.",
+    "date": "2025-06-16T23:35:18.740166"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "talk about health and safety",
+    "response": "The health and safety guidelines at FinSolve Technologies include the following aspects:\n\n### Workplace Safety Guidelines\n- Comply with the Occupational Safety, Health, and Working Conditions Code, 2020.\n- Mandatory safety training for all employees.\n- Use personal protective equipment (PPE) where required.\n\n### Accident & Injury Reporting\n- Report all accidents, injuries, or near-misses to HR and the Safety Officer immediately.\n- First aid kits and emergency contact numbers are available at all locations.\n\n### Mental Health & Well-being Support\n- Access to Employee Assistance Program (EAP) counselors and mental health resources.\n- Regular wellness workshops and stress management sessions.\n\n### Emergency Procedures\n- Evacuation plans are displayed at all exits.\n- Fire drills are conducted quarterly.\n- Emergency helpline numbers are displayed prominently.\n\nThese measures ensure a safe and supportive working environment for all employees, focusing on both physical safety and mental well-being.",
+    "date": "2025-06-16T23:39:58.528547"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "explain the emergency procedures",
+    "response": "The emergency procedures at FinSolve Technologies are designed to ensure safety and preparedness in case of any emergency situation. The key elements include:\n\n- **Evacuation Plans**: Clearly displayed at all exits to guide employees in safely exiting the premises during an emergency.\n- **Fire Drills**: Conducted quarterly to familiarize employees with evacuation routes and procedures, ensuring everyone knows what to do in case of a fire.\n- **Emergency Helpline Numbers**: Displayed prominently across the premises to provide quick access to emergency services when needed.\n\nThese procedures are part of the company's commitment to maintaining a safe environment and ensuring that employees are well-prepared to handle emergencies efficiently.",
+    "date": "2025-06-16T23:44:29.423972"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "provide the source link",
+    "response": "The information you requested is based on internal documentation and policies, and as such, there is no external source link available. If you need further clarification or documentation, it's best to refer to the company's internal policy portal or contact your HR department.",
+    "date": "2025-06-16T23:44:59.843883"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is our cash flow analysis",
+    "response": "The cash flow analysis for FinSolve Technologies is as follows:\n\n### Q2 2024 Cash Flow Analysis\n- **Cash Flow from Operations**: $450 million, up 18% YoY, driven by strong holiday sales and efficient working capital management.\n- **Cash Flow from Investing**: $80 million, allocated to product enhancements and global expansion.\n- **Cash Flow from Financing**: $35 million, securing funds for sustained growth in 2025.\n\n### 2024 Annual Cash Flow Summary\n- **Cash Flow from Operations**: $1.5 billion, up 14% YoY, supporting investments in R&D, market expansion, and product development.\n- **Cash Flow from Investing**: $260 million, representing 20% of total cash flows, allocated to research and development, new market entry, and acquisitions.\n- **Cash Flow from Financing**: Net cash inflow of $110 million, used primarily for working capital management and capital expenditure.\n\nThese figures indicate strong operational performance and strategic investments to support long-term growth.",
+    "date": "2025-06-16T23:48:09.027989"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is out claim procedure",
+    "response": "The claim procedure at FinSolve Technologies for reimbursements is as follows:\n\n1. **Submission**: Employees must submit expense claims via the HRMS portal with original bills within 30 days of incurring the expense.\n   \n2. **Documentation Required**:\n   - Original bills/invoices.\n   - Travel tickets/boarding passes (if applicable).\n   - Approval emails (if pre-approval was required for the expense).\n\n3. **Review and Approval**: \n   - Claims are reviewed and must be approved by the reporting manager.\n   \n4. **Reimbursement**:\n   - Once approved, the reimbursement is processed and included in the next payroll cycle.\n\nThis process ensures that all claims are handled efficiently and employees are reimbursed promptly for eligible expenses.",
+    "date": "2025-06-16T23:54:04.195965"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "talk about our data security",
+    "response": "FinSolve Technologies prioritizes data security through various measures as detailed below:\n\n### Authentication and Authorization\n- **User Authentication**: Implements OAuth 2.0 with JWT tokens, multi-factor authentication (MFA), and biometric authentication for mobile devices.\n- **Authorization**: Utilizes Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) to ensure fine-grained permissions and regular permission audits.\n\n### Data Protection\n- **Encryption**:\n  - Data in transit is protected using TLS 1.3.\n  - Data at rest is encrypted with AES-256 using AWS KMS.\n  - Field-level encryption is applied for personally identifiable information (PII) and financial data.\n  - Database column-level encryption is used for sensitive fields.\n- **Data Classification**: Classifies data into four levels\u2014public, internal use only, confidential, and restricted.\n\n### Network Security\n- **Perimeter Protection**: Employs AWS WAF, Cloudflare for DDoS mitigation, and IP whitelisting for admin endpoints.\n- **Network Segmentation**: Uses VPC with distinct subnets, security groups, and network ACLs.\n- **API Security**: Includes rate limiting, input validation, and request signing for secure API interactions.\n\nThese measures are part of our commitment to safeguarding user data and maintaining the integrity and confidentiality of sensitive information.",
+    "date": "2025-06-16T23:56:47.942017"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what of network security",
+    "response": "FinSolve Technologies implements robust network security measures to protect its infrastructure:\n\n### Perimeter Protection\n- **AWS WAF**: Used for web application protection to mitigate common exploits that could affect application availability, compromise security, or consume excessive resources.\n- **Cloudflare**: Provides protection against Distributed Denial of Service (DDoS) attacks.\n- **IP Whitelisting**: Specific to administrative endpoints to control access and enhance security.\n\n### Network Segmentation\n- **VPC (Virtual Private Cloud)**: Utilizes public, private, and restricted subnets to segment network traffic and resources based on sensitivity and function.\n- **Security Groups**: Configured with least-privilege access rules to allow only necessary traffic to and from instances.\n- **Network ACLs (Access Control Lists)**: Act as an additional layer of security to control inbound and outbound traffic at the subnet level.\n\n### API Security\n- **Rate Limiting**: Prevents abuse by limiting the number of API requests.\n- **Input Validation and Sanitization**: Ensures that data entering the system is clean and free of malicious content.\n- **Request Signing**: Secures partner API interactions to verify the identity and integrity of the requests.\n\nThese measures collectively enhance the security of FinSolve's network infrastructure, ensuring a secure environment for operations and data.",
+    "date": "2025-06-16T23:58:07.986950"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "what is the recommendation for quater 2",
+    "response": "For Q2 2024, the recommendations at FinSolve Technologies were as follows:\n\n1. **Accelerate European Expansion**: Increase ad spend by 10% in France to overcome regulatory hurdles and meet customer acquisition targets.\n\n2. **Enhance InstantPay Adoption**: Introduce gamified incentives to drive repeat usage and sustain sign-up momentum.\n\n3. **Sustain Social Media Growth**: Invest in video content and influencer partnerships to maintain engagement growth.\n\nThese strategies were proposed based on the performance and results from Q1 2024, aiming to build on the success and address specific challenges faced during the quarter.",
+    "date": "2025-06-17T00:07:40.361600"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "present the response as a table",
+    "response": "Here is the recommendation for Q2 2024 presented in a table format:\n\n| Key Recommendation                    | Description                                                                                             |\n|---------------------------------------|---------------------------------------------------------------------------------------------------------|\n| **Accelerate European Expansion**     | Increase ad spend by 10% in France to overcome regulatory hurdles and meet customer acquisition targets. |\n| **Enhance InstantPay Adoption**      | Introduce gamified incentives to drive repeat usage and sustain sign-up momentum.                        |\n| **Sustain Social Media Growth**       | Invest in video content and influencer partnerships to maintain engagement growth.                       |",
+    "date": "2025-06-17T00:11:40.709428"
+  },
+  {
+    "user": {
+      "username": "Evan",
+      "role": "executives"
+    },
+    "prompt": "use list ",
+    "response": "Sure, here are the recommendations for Q2 2024 presented in list format:\n\n- **Accelerate European Expansion**: Increase ad spend by 10% in France to overcome regulatory hurdles and meet customer acquisition targets.\n  \n- **Enhance InstantPay Adoption**: Introduce gamified incentives to drive repeat usage and sustain sign-up momentum.\n  \n- **Sustain Social Media Growth**: Invest in video content and influencer partnerships to maintain engagement growth.",
+    "date": "2025-06-17T00:17:40.357952"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "talk about employee onboarding",
+    "response": "That information is not available in the current context or knowledge base.",
+    "date": "2025-06-17T00:22:52.110867"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "talk about our fault tolerancce",
+    "response": "That information is not available in the current context or knowledge base.",
+    "date": "2025-06-17T00:23:35.537157"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "what is our Resilience and Fault Tolerance",
+    "response": "FinSolve Technologies' Resilience and Fault Tolerance strategies include:\n\n### High Availability\n- **Multi-Availability Zone (AZ) deployments** in AWS regions to ensure service availability during zone failures.\n- **Active-active configurations** for critical services to maintain continuous operations.\n- **Database replication with automated failover capabilities** to quickly recover from database failures.\n- **Global load balancing** for geographic redundancy, ensuring users are routed to the healthiest and closest data center.\n\n### Circuit Breakers\n- **Implemented using Istio service mesh** to prevent cascading failures across services.\n- **Configurable thresholds** for error rates and latency to determine when to trip the circuit breaker.\n- **Fallback mechanisms** for degraded service modes to provide alternative functionality when a service is unavailable.\n\n### Disaster Recovery\n- **Regular backups to Amazon S3** with versioning enabled to ensure data can be restored to a specific point in time.\n- **Cross-region replication for critical data** to safeguard against regional failures.\n- **Recovery Time Objective (RTO) of 4 hours** for restoring system functionality.\n- **Recovery Point Objective (RPO) of 15 minutes** to ensure minimal data loss.\n- **Quarterly disaster recovery drills** and documentation to prepare for and improve response to real disaster scenarios.\n\n### Data Consistency\n- **Event sourcing patterns** for critical financial transactions to ensure data integrity and auditability.\n- **Saga pattern for distributed transactions** across microservices to manage complex processes with multiple steps.\n- **Eventual consistency with compensation transactions** where appropriate to handle inconsistencies gracefully while ensuring system reliability.\n[\ud83d\udd17 View source](https://github.com/guavacoderepo/Role-based-chatbot/tree/main/resources/data/engineering/engineering_master_doc.md)",
+    "date": "2025-06-17T00:24:05.604391"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "what about our sdlc",
+    "response": "FinSolve Technologies follows a Scrum-based Agile process with a focus on iterative development, collaboration, and quality assurance. Here's an overview of the Software Development Lifecycle (SDLC):\n\n### Agile Methodology\n\n#### Scrum Ceremonies\n- **Sprint Planning**: Involves product owners and engineering leads defining sprint goals and prioritizing tasks in a 4-hour session.\n- **Daily Standups**: 15-minute meetings to track progress and address any blockers faced by the team.\n- **Sprint Review**: A 2-hour demo of completed features to stakeholders at the end of each sprint.\n- **Sprint Retrospective**: A 1.5-hour meeting for the team to discuss improvements for the next sprint cycle.\n\n#### Roles and Responsibilities\n- **Product Owner**: Maintains the product backlog, sets priorities, and accepts user stories.\n- **Scrum Master**: Facilitates ceremonies, removes impediments, and coaches the team.\n- **Development Team**: Self-organizes to deliver on sprint commitments.\n- **Technical Lead**: Ensures technical excellence and architectural consistency.\n\n### Development Workflow\n\n#### Requirements Engineering\n- Product managers create user stories in Jira, with acceptance criteria defined using Gherkin syntax.\n- Engineering leads validate technical feasibility and estimate complexity using story points (Fibonacci sequence).\n- Stories must meet a Definition of Ready (DoR) checklist before they enter development.\n\n#### Design Phase\n- Architects create technical designs using UML diagrams and C4 model documentation.\n- API specifications are defined using OpenAPI/Swagger.\n- UI/UX designs are created in Figma with a component-based architecture.\n- Design reviews are conducted with senior engineers and stakeholders to ensure quality and alignment.\n\nThis structured approach ensures that development is efficient, transparent, and aligned with business goals, enabling rapid delivery of high-quality software solutions.\n\n[\ud83d\udd17 View source](https://github.com/guavacoderepo/Role-based-chatbot/tree/main/resources/data/engineering/engineering_master_doc.md)",
+    "date": "2025-06-17T00:25:13.891242"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "explain more ",
+    "response": "That information is not available in the current context or knowledge base.",
+    "date": "2025-06-17T00:26:00.137490"
+  },
+  {
+    "user": {
+      "username": "Tony",
+      "role": "engineering"
+    },
+    "prompt": "explian more",
+    "response": "The Software Development Lifecycle (SDLC) at FinSolve Technologies incorporates several best practices aligned with Agile principles to promote efficiency and quality in software development. Here's a detailed breakdown:\n\n### Requirements Engineering\n- **Definition of Ready (DoR)**: This checklist ensures that user stories are fully specified with all necessary details before they are taken up for development. It includes criteria such as complete acceptance criteria, clear objectives, and any dependencies or constraints identified. This prevents development delays due to unclear requirements.\n\n### Design Phase\n- **Technical Designs**: \n  - Architects create detailed technical designs using industry-standard tools like UML diagrams and the C4 model. This helps in visualizing system architecture and ensuring that all stakeholders have a clear understanding of the system components.\n  - **API Specifications**: Utilizes OpenAPI/Swagger for clearly documenting APIs with comprehensive examples of requests and responses, aiding developers in integration tasks.\n  - **UI/UX**: Designs are developed in Figma, focusing on a component-based architecture to promote reuse and consistency across the application.\n\n### Coding Standards\n- Enforced through language-specific style guides and tools:\n  - **JavaScript/TypeScript**: Uses ESLint with Airbnb configuration for code style consistency.\n  - **Python**: Utilizes Black for automatic code formatting and Flake8 for linting.\n  - **Go**: Implements gofmt and golint to maintain standard Go coding practices.\n  - **SQL**: Uses pgFormatter for consistent SQL formatting.\n\n### Code Review Process\n- **Pull Requests** must gain at least two approvals\u2014one from a peer engineer and another from a senior engineer or tech lead.\n- **Automated Checks**: Linting, style validation, and unit tests (with a minimum 85% coverage) must pass before code review begins. Tools like Snyk ensure no major security vulnerabilities exist in the code before merging.\n- **Focus Areas**: Reviews concentrate on correctness, performance, security, maintainability, and test coverage.\n\n### Testing Process\n- Conducted in a layered manner, from unit tests to performance tests, ensuring robust coverage.\n- Test environments replicate various stages of deployment, including development, staging, and pre-production, allowing for thorough validation before production releases.\n\n### Deployment Pipeline\n- **Continuous Integration/Continuous Deployment (CI/CD)**: Employs tools like Jenkins and GitHub Actions to automate building, testing, and deployment processes.\n- **Production Releases**: Regularly scheduled bi-weekly releases with strategies like blue-green or canary deployments to minimize risk during rollout.\n\nBy integrating these practices into the development lifecycle, FinSolve Technologies enhances its ability to deliver reliable, high-quality software while remaining adaptable to change.\n\n[\ud83d\udd17 View source](https://github.com/guavacoderepo/Role-based-chatbot/tree/main/resources/data/engineering/engineering_master_doc.md)",
+    "date": "2025-06-17T00:26:42.897561"
   }
 ]
