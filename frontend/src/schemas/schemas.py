@@ -4,7 +4,7 @@ from enum import Enum
 
 class Roles(Enum):
     Engineering = "engineering"
-    Employee = "general"
+    Employee = "employee"
     Finance = "finance"
     Executives = "executives"
     Marketing = "marketing"

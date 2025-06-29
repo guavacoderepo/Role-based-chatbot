@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-from requests.auth import HTTPBasicAuth
 from .auth import logout
 from ..schemas.schemas import User
 

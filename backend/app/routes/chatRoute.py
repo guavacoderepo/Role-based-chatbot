@@ -41,7 +41,7 @@ async def handle_chat(request: ChatModel, user=Depends(AccessTokenBearer()), db=
         source_path = vectors[0]['source'] if vectors else "no_source_found"
 
         # Link to source repo or docs
-        source_url = f"[🔗 View source](https://github.com/guavacoderepo/Role-based-chatbot/tree/main/{source_path})"
+        source_url = f"[🔗 View source](https://raw.githubusercontent.com/guavacoderepo/Role-based-chatbot/refs/heads/main/backend/{source_path})"
 
         # Generate answer from LLM using context and source URL
         response_text = llm.gpt_conversation_prompt(rag_context=rag_context, source_url=source_url)

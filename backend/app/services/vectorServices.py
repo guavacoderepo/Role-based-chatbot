@@ -16,8 +16,8 @@ class VectorService:
         """
         self.model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', device=device)
         self.chunk_size = 300  # Tokens per chunk
-        self.overlap = 50      # Overlap tokens between chunks
-        self.search_limit = 5  # Number of search results to return
+        self.overlap = 40      # Overlap tokens between chunks
+        self.search_limit = 8  # Number of search results to return
         self.client = QdrantClient(url="http://localhost:6334")  # Qdrant client connection
 
     def load_text(self, path: str) -> str:

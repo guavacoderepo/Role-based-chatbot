@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from ..history import retrieve_history  
+from ..utils.history import retrieve_history  
 from ..schemas.schemas import UserModel
 
 # List of possible user roles for registration dropdown
@@ -33,7 +33,11 @@ def login_page():
 
             if response.status_code == 200:
                 # Parse response JSON into UserModel pydantic model
-                user_model = UserModel(**response.json())
+
+                user_resp = response.json()
+                role = "employee" if user_resp['user']['role'] == "general" else user_resp['user']['role']
+                user_resp['user']['role'] = role
+                user_model = UserModel(**user_resp)
 
                 # Show success message with user info
                 st.success(f"✅ Login successful, Welcome, {user_model.user.username}, (Role: {user_model.user.role})")
@@ -70,6 +74,8 @@ def registration_page():
     username = st.text_input("Username")
     role = st.selectbox("Select Role", roles) 
     password = st.text_input("Password", type="password")
+
+    role = "general" if role == "employee" else role
 
     # Center the buttons using three columns
     col1, _, _ = st.columns([2, 2, 1])
