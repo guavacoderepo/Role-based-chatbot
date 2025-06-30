@@ -6,10 +6,6 @@ This is an AI-powered chatbot solution built for **FinSolve Technologies**, desi
 
 <img src = "imgs/front_img.png">
 
-<img src = "imgs/goals.png">
-
-<img src = "imgs/workflow.png">
-
 ---
 
 ## 💡 Challenges Faced
@@ -20,6 +16,12 @@ Despite being a leading FinTech company, FinSolve faced operational bottlenecks 
 - 🔒 Inconsistent access to sensitive and role-specific data   
 - 📉 Slower decision-making processes  
 - 🧩 Fragmented data sources and silos
+
+---
+
+<img src = "imgs/goals.png">
+
+<img src = "imgs/workflow.png">
 
 ---
 
