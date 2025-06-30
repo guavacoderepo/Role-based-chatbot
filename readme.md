@@ -4,7 +4,11 @@ This is an AI-powered chatbot solution built for **FinSolve Technologies**, desi
 
 ---
 
-<img src = "front_img.png">
+<img src = "imgs/front_img.png">
+
+<img src = "imgs/goals.png">
+
+<img src = "imgs/workflow.png">
 
 ---
 
