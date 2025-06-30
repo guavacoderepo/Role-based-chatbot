@@ -3,6 +3,8 @@
 This is an AI-powered chatbot solution built for **FinSolve Technologies**, designed to solve inter-departmental communication delays and data silos by providing **secure, role-based access** to information. Leveraging **RAG (Retrieval-Augmented Generation)**, the chatbot uses OpenAI's GPT models and Qdrant to retrieve and generate **department-specific insights** on demand.
 
 ---
+<img src = "front_img.png">
+---
 
 ## 💡 Challenges Faced
 
