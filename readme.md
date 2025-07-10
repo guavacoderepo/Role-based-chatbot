@@ -100,7 +100,7 @@ Create a `.env` file in the `backend/` directory with the following contents:
 ```dotenv
 OPENAI_API_KEY=your_openai_key
 SECRET_KEY=your_jwt_secret
-DB_PATH = "backend/app/database/data.db"
+DB_PATH=backend/app/database/data.db
 ```
 
 6. 🚀 Run the Backend Server
