@@ -71,8 +71,50 @@ The chatbot was developed to address the above challenges by:
 ## ⚙️ Setup Instructions
 
 1. 🔧 Clone the Repository
-```
+```bash
 git clone https://github.com/guavacoderepo/Role-based-chatbot.git
-
 cd Role-based-chatbot
+```
+
+2. 🐍 Create and Activate Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. 📦 Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4. 🐳 Start Qdrant (via Docker)
+Make sure you have Docker installed. Then run:
+```bash
+sudo docker-compose up -d
+```
+
+5. 🔐 Set Up Environment Variables
+Create a .env file in the backend/ directory with the following contents:
+```python
+OPENAI_API_KEY=your_openai_key
+SECRET_KEY=your_jwt_secret
+```
+
+6. 🚀 Run the Backend Server
+Open a terminal and navigate to the backend folder:
+```bash
+cd backend
+uvicorn run:app --reload
+```
+
+7. 🖥️ Run the Frontend Application
+Open a new terminal, activate your virtual environment again if necessary, and run:
+```bash
+streamlit run frontend/app.py
+```
+
+8. 🧪 Optional (Testing APIs)
+Visit the FastAPI Swagger docs at:
+```
+http://127.0.0.1:8000/docs
 ```
