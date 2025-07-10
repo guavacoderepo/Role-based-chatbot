@@ -108,7 +108,7 @@ uvicorn run:app --reload
 ```
 
 7. 🖥️ Run the Frontend Application
-Open a new terminal, activate your virtual environment again if necessary, and run:
+    Open a new terminal, activate your virtual environment again if necessary, and run:
 ```bash
 streamlit run frontend/app.py
 ```
