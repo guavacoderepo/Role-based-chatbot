@@ -68,5 +68,11 @@ The chatbot was developed to address the above challenges by:
 
 ---
 
+## ⚙️ Setup Instructions
 
+1. 🔧 Clone the Repository
+```
+git clone https://github.com/guavacoderepo/Role-based-chatbot.git
 
+cd Role-based-chatbot
+```
