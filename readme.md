@@ -119,7 +119,7 @@ curl "http://127.0.0.1:8000/api/v1/rag/"
 
 8. 🖥️ Run the Frontend Application
 
-In a new terminal, activate your virtual environment (if not already), and run:
+In a new terminal, navigate to the root directory, activate your virtual environment and run:
 ```bash
 streamlit run frontend/app.py
 ```
