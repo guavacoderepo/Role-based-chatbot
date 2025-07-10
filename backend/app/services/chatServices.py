@@ -1,7 +1,7 @@
 from typing import Dict, Any, List
 import sqlite3
-from app.db.queries import Queries
-from app.schemas.schemes import ConversationModel
+from ..db.queries import Queries
+from ..schemas.schemes import ConversationModel
 from fastapi import HTTPException, status
 
 

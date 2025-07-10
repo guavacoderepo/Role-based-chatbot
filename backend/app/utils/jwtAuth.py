@@ -3,8 +3,8 @@ from fastapi import Request, status, Depends
 from fastapi.exceptions import HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from .accessUtils import decode_token
-from app.services.usersServices import UsersServices
-from app.db.base import get_db
+from ..services.usersServices import UsersServices
+from ..db.base import get_db
 
 class AccessTokenBearer(HTTPBearer):
     def __init__(self, auto_error=True):

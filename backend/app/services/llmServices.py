@@ -1,10 +1,9 @@
-import json
 from openai import OpenAI
-from app.schemas.schemes import User, ConversationModel
+from ..schemas.schemes import User, ConversationModel
 from datetime import datetime
 from typing import List, Dict
-from app.config.settings import Settings
-from app.services.chatServices import ChatServices
+from ..config.settings import Settings
+from ..services.chatServices import ChatServices
 
 settings = Settings()
 

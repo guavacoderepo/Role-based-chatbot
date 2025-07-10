@@ -1,10 +1,10 @@
 from fastapi import APIRouter, status, HTTPException, Depends
-from app.schemas.schemes import ChatModel, User
-from app.utils.markdownPDF import download_pdf
-from app.db.base import get_db
-from app.services.llmServices import LLMServices
-from app.services.ragServices import RAGService
-from app.utils.jwtAuth import AccessTokenBearer
+from ..schemas.schemes import ChatModel, User
+from ..utils.markdownPDF import download_pdf
+from ..db.base import get_db
+from ..services.llmServices import LLMServices
+from ..services.ragServices import RAGService
+from ..utils.jwtAuth import AccessTokenBearer
 import re
 
 

@@ -88,32 +88,44 @@ pip install -r requirements.txt
 ```
 
 4. 🐳 Start Qdrant (via Docker)
+
 Make sure you have Docker installed. Then run:
 ```bash
 sudo docker-compose up -d
 ```
 
 5. 🔐 Set Up Environment Variables
-Create a .env file in the backend/ directory with the following contents:
-```python
+
+Create a `.env` file in the `backend/` directory with the following contents:
+```dotenv
 OPENAI_API_KEY=your_openai_key
 SECRET_KEY=your_jwt_secret
+DB_PATH = "backend/app/database/data.db"
 ```
 
 6. 🚀 Run the Backend Server
-Open a terminal and navigate to the backend folder:
+
+In a terminal, navigate to the root and run:
 ```bash
-cd backend
-uvicorn run:app --reload
+uvicorn backend.run:app --reload
 ```
 
-7. 🖥️ Run the Frontend Application
-    Open a new terminal, activate your virtual environment again if necessary, and run:
+7. 🧠 Embed and Save Documents (RAG Indexing)
+
+In a new terminal, Use the endpoint below to embed your documents and save them to Qdrant for future querying:
+```bash
+curl "http://127.0.0.1:8000/api/v1/rag/"
+```
+
+8. 🖥️ Run the Frontend Application
+
+In a new terminal, activate your virtual environment (if not already), and run:
 ```bash
 streamlit run frontend/app.py
 ```
 
-8. 🧪 Optional (Testing APIs)
+9. 🧪 Optional (Testing APIs)
+
 Visit the FastAPI Swagger docs at:
 ```
 http://127.0.0.1:8000/docs

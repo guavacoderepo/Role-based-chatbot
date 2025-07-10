@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+from .app.routes.authRoute import auth_router
+from .app.routes.chatRoute import chat_router
+from .app.routes.ragRoute import rag_router
 
-from app.routes.authRoute import auth_router
-from app.routes.chatRoute import chat_router
-from app.routes.ragRoute import rag_router
-
-from app.middlewares.errorHandler import register_global_exception_handlers
-from app.db.db_init import create_tables
+from .app.middlewares.errorHandler import register_global_exception_handlers
+from .app.db.db_init import create_tables
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

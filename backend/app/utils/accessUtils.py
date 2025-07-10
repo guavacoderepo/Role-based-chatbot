@@ -1,7 +1,7 @@
 import bcrypt
 import datetime
 import jwt
-from app.config.settings import Settings
+from ..config.settings import Settings
 from fastapi import HTTPException, status
 
 settings = Settings()  # Load app settings (e.g., SECRET_KEY)
