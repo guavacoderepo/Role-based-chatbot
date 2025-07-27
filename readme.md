@@ -4,6 +4,14 @@ This is an AI-powered chatbot solution built for **FinSolve Technologies**, desi
 
 ---
 
+<p align="center">
+  <a href="https://youtu.be/4RkgQSk40QE" target="_blank">
+    [🎥 Watch the Role-Based AI Chatbot Demo Video Here]
+  </a>
+</p>
+
+---
+
 <img src = "imgs/front_img.png">
 
 ---
@@ -23,8 +31,6 @@ Despite being a leading FinTech company, FinSolve faced operational bottlenecks 
 
 <img src = "imgs/workflow.png">
 
----
-<p align="center"> <a href="https://youtu.be/4RkgQSk40QE" target="_blank"> <img src="https://img.youtube.com/vi/4RkgQSk40QE/0.jpg" alt="Watch Demo" width="600"/> </a> </p>
 ---
 
 ## ✅ What This Project Solves
