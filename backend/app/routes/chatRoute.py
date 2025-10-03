@@ -1,4 +1,4 @@
-from fastapi import APIRouter, status, HTTPException, Depends
+from fastapi import APIRouter, status, Request, HTTPException, Depends
 from ..schemas.schemes import ChatModel, User
 from ..utils.markdownPDF import download_pdf
 from ..db.base import get_db
@@ -11,7 +11,7 @@ import re
 chat_router = APIRouter()
 
 @chat_router.post('/start')
-async def handle_chat(request: ChatModel,  auth=Depends(AccessTokenBearer()), db=Depends(get_db)):
+async def handle_chat(request: ChatModel, req: Request, auth=Depends(AccessTokenBearer()), db=Depends(get_db)):
     try:
         prompt = request.prompt
         user = User(**auth["user"])    # Convert dict to User model
@@ -33,7 +33,10 @@ async def handle_chat(request: ChatModel,  auth=Depends(AccessTokenBearer()), db
             raise HTTPException(detail="Empty chat history", status_code=status.HTTP_400_BAD_REQUEST)
         
         # Otherwise, perform Retrieval-Augmented Generation (RAG) workflow
-        rag = RAGService()
+        model = req.app.state.chunk_model
+        client = req.app.state.qdrant_client
+
+        rag = RAGService(model, client)   # Initialize the RAG service
         vectors = rag.retrive_vectors(prompt, user.role)
 
         # Combine retrieved text as context

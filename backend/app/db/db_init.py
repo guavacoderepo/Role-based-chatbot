@@ -3,7 +3,7 @@ from pathlib import Path
 from .queries import Queries
 from ..config.settings import Settings
 
-settings = Settings()
+settings = Settings() # type: ignore
 
 def create_tables():
     # Create the database file if it doesn't exist

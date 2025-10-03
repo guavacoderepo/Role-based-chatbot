@@ -1,9 +1,10 @@
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
-    OPENAI_API_KEY: str
     SECRET_KEY:str
     DB_PATH:str
+    QDRANT_KEY:str
+    QDRANT_URL:str
     env: str = "development"
 
     class Config:

@@ -14,8 +14,6 @@ def retrieve_history():
     # Parse JSON response containing previous chat entries
     mesages = response.json()
 
-    print(mesages)
-
     # Initialize the messages list in session state if not already present
     if "messages" not in st.session_state:
         st.session_state.messages = []

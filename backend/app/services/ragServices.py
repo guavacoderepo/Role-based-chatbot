@@ -1,16 +1,15 @@
-from pandas import DataFrame
-from .vectorServices import VectorService
 import glob
+from .vectorServices import VectorService
 from typing import List, Dict
 from ..schemas.schemes import Roles
 
 class RAGService:
-    def __init__(self, documents: List[Dict[str, List[str]]] = []):
+    def __init__(self, model, client, documents: List[Dict] = []):
         """
         Initialize with optional list of documents.
         VectorService handles text loading, chunking, embedding, and vector storage.
         """
-        self.vector = VectorService()
+        self.vector = VectorService(model, client)
         self.documents: List[Dict] = documents
 
     def retrie_text(self) ->  List[Dict]:
@@ -18,7 +17,7 @@ class RAGService:
         Load text files from 'resources/data/*/*' folder,
         read content, add metadata, and store in self.documents.
         """
-        paths: List[str] = glob.glob('resources/data/*/*')  # Get all nested files
+        paths: List[str] = glob.glob('backend/resources/data/*/*')  # Get all nested files
         for path in paths:
             text = self.vector.load_text(path)  # Load file content
             if not text:
@@ -26,7 +25,7 @@ class RAGService:
             self.documents.append({
                 "text": text,
                 "source": path,
-                "collection": path.split('/')[2]  # Extract collection name from path
+                "collection": path.split('/')[-2]  # Extract collection name from path
             })
         return self.documents
 
@@ -38,7 +37,7 @@ class RAGService:
         - Save embeddings to the respective collection
         """
         for document in self.documents:
-            chunks: List[str | DataFrame] = self.vector.chunk_text(document['text'])  # Chunk the text
+            chunks: List[str] = self.vector.chunk_text(document['text'])  # Chunk the text
             embeddings = self.vector.embed_chunks(chunks, document['source'])  # Create embeddings
             self.vector.save_vectors(document['collection'], embeddings)  # Save to vector DB
 

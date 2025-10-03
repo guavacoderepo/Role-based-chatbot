@@ -1,6 +1,3 @@
-from pandas import DataFrame
-from sentence_transformers import SentenceTransformer
-from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance
 from qdrant_client.http.models import PointStruct
 from haystack.nodes import PreProcessor
@@ -8,18 +5,18 @@ import uuid
 from typing import List
 
 class VectorService:
-    def __init__(self, device='cpu'):
+    def __init__(self, model, client):
         """
         Initialize the vector service:
         - Load the sentence transformer model for embeddings.
         - Set chunk size and overlap for text splitting.
         - Connect to Qdrant vector database.
         """
-        self.model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', device=device)
+        self.model = model
         self.chunk_size = 300  # Tokens per chunk
         self.overlap = 40      # Overlap tokens between chunks
         self.search_limit = 8  # Number of search results to return
-        self.client = QdrantClient(url="http://localhost:6334")  # Qdrant client connection
+        self.client = client
 
     def load_text(self, path: str) -> str:
         """
@@ -33,7 +30,7 @@ class VectorService:
             print(f"Error reading {path}: {e}")
             return ""
 
-    def chunk_text(self, text: str) -> List[str | DataFrame]:
+    def chunk_text(self, text: str) -> List[str]:
         """
         Split long text into overlapping chunks using Haystack PreProcessor.
         Respects sentence boundaries for better coherence.
@@ -45,7 +42,7 @@ class VectorService:
         )
         processed = preprocessor.process([{"content": text}])
         # Extract content from processed chunks
-        return [d.content for d in processed]
+        return [str(d.content) for d in processed]
     
     def embed_text(self, text: str) -> List:
         """
@@ -53,7 +50,7 @@ class VectorService:
         """
         return self.model.encode(text).tolist()
 
-    def embed_chunks(self, chunks: List[str | DataFrame], source: str) -> List[PointStruct]:
+    def embed_chunks(self, chunks: List[str], source: str) -> List[PointStruct]:
         """
         Embed multiple text chunks and prepare them as Qdrant points.
         Each chunk gets a unique UUID and metadata including original text and source.
@@ -88,6 +85,8 @@ class VectorService:
                 timeout=120
             )
         self.client.upsert(collection, points)  # Insert points
+
+        print(f"Save in collect ->  {collection}")
 
     def search(self, collection: str, query_vector: List[float]) -> List[dict]:
         """
