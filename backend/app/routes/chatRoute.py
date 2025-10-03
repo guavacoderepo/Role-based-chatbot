@@ -11,10 +11,10 @@ import re
 chat_router = APIRouter()
 
 @chat_router.post('/start')
-async def handle_chat(request: ChatModel, user=Depends(AccessTokenBearer()), db=Depends(get_db)):
+async def handle_chat(request: ChatModel,  auth=Depends(AccessTokenBearer()), db=Depends(get_db)):
     try:
         prompt = request.prompt
-        user = User(**user)  # Convert dict to User model
+        user = User(**auth["user"])    # Convert dict to User model
 
         # Regex to detect download/export commands in prompt
         pattern = re.compile(
@@ -22,7 +22,7 @@ async def handle_chat(request: ChatModel, user=Depends(AccessTokenBearer()), db=
             re.IGNORECASE
         )
 
-        llm = LLMServices(prompt=prompt, user=user, db=db)
+        llm = LLMServices(prompt=prompt, user=user, db=db, api_key=auth['api_key'])
 
         # If prompt requests a download action and chat history exists, generate PDF
         if re.search(pattern, prompt):
@@ -44,7 +44,7 @@ async def handle_chat(request: ChatModel, user=Depends(AccessTokenBearer()), db=
         source_url = f"[🔗 View source](https://raw.githubusercontent.com/guavacoderepo/Role-based-chatbot/refs/heads/main/backend/{source_path})"
 
         # Generate answer from LLM using context and source URL
-        response_text = llm.gpt_conversation_prompt(rag_context=rag_context, source_url=source_url)
+        response_text = llm.gpt_conversation_prompt(rag_context=rag_context)
 
         # Append source URL if response has valid info
         if "That information is not available" not in response_text:
@@ -61,9 +61,8 @@ async def handle_chat(request: ChatModel, user=Depends(AccessTokenBearer()), db=
 
 
 @chat_router.get('/history')
-def handle_retrieve_history(user=Depends(AccessTokenBearer()), db=Depends(get_db)):
+def handle_retrieve_history(auth=Depends(AccessTokenBearer()), db=Depends(get_db)):
     # Initialize LLM service with authenticated user and db
-    llm = LLMServices(user=User(**user), db=db)
-
+    llm = LLMServices(user=User(**auth['user']), db=db)
     # Return stored conversation history for user
     return llm.history

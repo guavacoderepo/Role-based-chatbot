@@ -1,6 +1,7 @@
+from pandas import DataFrame
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
-from qdrant_client.models import VectorParams
+from qdrant_client.models import VectorParams, Distance
 from qdrant_client.http.models import PointStruct
 from haystack.nodes import PreProcessor
 import uuid
@@ -32,7 +33,7 @@ class VectorService:
             print(f"Error reading {path}: {e}")
             return ""
 
-    def chunk_text(self, text: str) -> List[str]:
+    def chunk_text(self, text: str) -> List[str | DataFrame]:
         """
         Split long text into overlapping chunks using Haystack PreProcessor.
         Respects sentence boundaries for better coherence.
@@ -52,13 +53,15 @@ class VectorService:
         """
         return self.model.encode(text).tolist()
 
-    def embed_chunks(self, chunks: list[str], source: str) -> list[dict]:
+    def embed_chunks(self, chunks: List[str | DataFrame], source: str) -> List[PointStruct]:
         """
         Embed multiple text chunks and prepare them as Qdrant points.
         Each chunk gets a unique UUID and metadata including original text and source.
         """
         sources = [source] * len(chunks)  # Same source for all chunks
-        vectors = self.model.encode(chunks, show_progress_bar=False)  # Batch encode
+        # Ensure all chunks are strings before encoding
+        str_chunks = [str(c) for c in chunks]
+        vectors = self.model.encode(str_chunks, show_progress_bar=False)  # Batch encode
 
         # Create Qdrant point payloads with id, vector, and metadata
         return [
@@ -66,11 +69,11 @@ class VectorService:
                 id=str(uuid.uuid4()),
                 vector=v.tolist(),
                 payload={"text": c, "source": s}
-            ).dict()
-            for c, v, s in zip(chunks, vectors, sources)
+            )
+            for c, v, s in zip(str_chunks, vectors, sources)
         ]
 
-    def save_vectors(self, collection: str, points: list[dict]) -> None:
+    def save_vectors(self, collection: str, points: List[PointStruct]) -> None:
         """
         Save vectors to a Qdrant collection.
         Creates the collection if it doesn't exist.
@@ -80,13 +83,13 @@ class VectorService:
                 collection_name=collection,
                 vectors_config=VectorParams(
                     size=384,           # Embedding dimension of MiniLM
-                    distance="Cosine"   # Similarity metric for search
+                    distance=Distance.COSINE   # Similarity metric for search
                 ),
                 timeout=120
             )
         self.client.upsert(collection, points)  # Insert points
 
-    def search(self, collection: str, query_vector: list[float]) -> list[dict]:
+    def search(self, collection: str, query_vector: List[float]) -> List[dict]:
         """
         Search the vector collection for top matching vectors to the query.
         Returns a list of results with id, similarity score, text, and source.
@@ -100,8 +103,8 @@ class VectorService:
             return [{
                 "id": str(result.id),
                 "score": result.score,
-                "text": result.payload.get("text", ""),
-                "source": result.payload.get("source", "")
+                "text": result.payload.get("text", "") if result.payload else "",
+                "source": result.payload.get("source", "") if result.payload else ""
             } for result in results]
         except Exception as e:
             print(f"[search] Error: {e}")

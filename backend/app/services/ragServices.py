@@ -1,3 +1,4 @@
+from pandas import DataFrame
 from .vectorServices import VectorService
 import glob
 from typing import List, Dict
@@ -10,9 +11,9 @@ class RAGService:
         VectorService handles text loading, chunking, embedding, and vector storage.
         """
         self.vector = VectorService()
-        self.documents = documents
+        self.documents: List[Dict] = documents
 
-    def retrie_text(self) -> str:
+    def retrie_text(self) ->  List[Dict]:
         """
         Load text files from 'resources/data/*/*' folder,
         read content, add metadata, and store in self.documents.
@@ -37,7 +38,7 @@ class RAGService:
         - Save embeddings to the respective collection
         """
         for document in self.documents:
-            chunks: list[str] = self.vector.chunk_text(document['text'])  # Chunk the text
+            chunks: List[str | DataFrame] = self.vector.chunk_text(document['text'])  # Chunk the text
             embeddings = self.vector.embed_chunks(chunks, document['source'])  # Create embeddings
             self.vector.save_vectors(document['collection'], embeddings)  # Save to vector DB
 

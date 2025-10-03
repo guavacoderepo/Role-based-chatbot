@@ -11,23 +11,47 @@ class AccessTokenBearer(HTTPBearer):
         # Initialize the HTTPBearer with optional auto error handling
         super().__init__(auto_error=auto_error)
 
-    async def __call__(self, request: Request, db=Depends(get_db)) -> Optional[Dict]:
-        # Extract credentials (token) from the Authorization header
-        creds = await super().__call__(request)
+    async def __call__(self, request: Request, db=Depends(get_db)) -> Any:
+        try:
+            # Extract credentials (token) from the Authorization header
+            creds = await super().__call__(request)
+            if creds is None:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Missing authentication credentials"
+                )
 
-        # Extract the token string from credentials
-        token = creds.credentials
+            # Decode JWT token
+            token_data = decode_token(creds.credentials)
 
-        # Decode the JWT token to get payload data
-        token_data = decode_token(token)
+            # Verify token and fetch user
+            user_service = UsersServices(db)
+            user = user_service.get_user_by_id(token_data.get("id"))
 
-        # Verify the token payload and retrieve the user from DB
-        user = self.verify_token_data(token_data, db)
-
-        return user
+            if not user:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="User not found or invalid token"
+                )
+            print(creds)
+            # Attach extra info
+            token = creds.credentials
+            api_key = token_data.get("api_key")
+        
+            return {"user":user, "api_key": api_key, "token":token}
+        
+        except Exception as e:
+            # Catch any unexpected errors
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Authentication error: {str(e)}"
+            )
 
     def verify_token_data(self, token_data: Dict, db: Any) -> Optional[Dict]:
         # Use the UsersServices to get user info by id from token data
         user_service = UsersServices(db)
-        user = user_service.get_user_by_id(token_data.get('id'))
+        user_id = token_data.get('id')
+        if not isinstance(user_id, int):
+            return None
+        user = user_service.get_user_by_id(user_id)
         return user

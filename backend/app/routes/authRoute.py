@@ -32,13 +32,13 @@ def handle_login(request: LoginModel, db=Depends(get_db)):
             detail="Invalid username or password",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+    
 
     # Generate JWT token with user ID
-    token = generate_token({"id": user['id']})
-
+    token = generate_token({"id": user['id'], "api_key":request.api_key})
+    
     # Create User schema instance for response
     user = User(id=user['id'], role=user['role'], username=user['username'])
-
     # Return success status, user info, and token
     return AuthResponseModel(status=True, user=user, token=token)
 

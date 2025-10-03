@@ -13,7 +13,8 @@ def login_page():
 
     # User inputs for credentials
     username = st.text_input("Username") 
-    password = st.text_input("Password", type="password") 
+    password = st.text_input("Password", type="password")
+    api_key = st.text_input("Openai API Key", type="password") 
 
     # Center the buttons using three columns
     col1, _, _ = st.columns([2, 2, 1])
@@ -28,7 +29,7 @@ def login_page():
             # Send POST request to FastAPI login endpoint with credentials
             response = requests.post(
                 "http://127.0.0.1:8000/api/v1/auth/login",
-                json={"username": username, "password": password}
+                json={"username": username, "password": password, "api_key": api_key}
             )
 
             if response.status_code == 200:

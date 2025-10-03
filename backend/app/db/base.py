@@ -1,7 +1,7 @@
 import sqlite3
 from ..config.settings import Settings
 
-settings = Settings()
+settings = Settings() # type: ignore
 
 def get_db():
     # Connect to SQLite database (thread-safe disabled for FastAPI compatibility)

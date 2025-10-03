@@ -4,7 +4,7 @@ import jwt
 from ..config.settings import Settings
 from fastapi import HTTPException, status
 
-settings = Settings()  # Load app settings (e.g., SECRET_KEY)
+settings = Settings()  # type: ignore # Load app settings (e.g., SECRET_KEY)
 
 def hash_password(plain_password: str) -> str:
     # Generate a salt and hash the plain password

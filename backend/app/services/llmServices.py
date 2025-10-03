@@ -1,24 +1,26 @@
+from fastapi import HTTPException, status
 from openai import OpenAI
+from openai.types.chat import ChatCompletionMessageParam
 from ..schemas.schemes import User, ConversationModel
 from datetime import datetime
-from typing import List, Dict
+from typing import List, Dict, Optional
 from ..config.settings import Settings
 from ..services.chatServices import ChatServices
 
-settings = Settings()
+settings = Settings() # type: ignore
 
 class LLMServices:
-    def __init__(self, user: User, prompt: str | None = None, db=None):
+    def __init__(self, user: User, api_key:Optional[str] = None, prompt: str = "", db=None):
         """
         Initialize with user, optional prompt, and DB connection.
         Also load previous conversation history from the DB.
         """
         self.user = user
         self.prompt = prompt
+        self.api_key = api_key
         self.chat_service = ChatServices(db) 
         self.history = self.retrieve_conversations()
-
-    def prompt_formate(self, rag_context: str = None, source_url: str = None) -> List[Dict]:
+    def prompt_formate(self, rag_context: Optional[str] = None) -> List[ChatCompletionMessageParam]:
         """
         Build the messages list for the LLM:
         - system instructions with user's role
@@ -40,7 +42,7 @@ class LLMServices:
                 f"\n\nContext:\n{rag_context.strip()}"
             )
         
-        prompt = [{"role": "system", "content": system_prompt}]
+        prompt:List[ChatCompletionMessageParam] = [{"role": "system", "content": system_prompt}]
 
         # Include up to last 3 conversation exchanges for context
         history = self.history[-3:] if len(self.history) > 3 else self.history
@@ -52,20 +54,24 @@ class LLMServices:
 
         # Add current user prompt last
         prompt.append({"role": "user", "content": self.prompt})
-        return prompt    
+        return prompt 
 
-    def gpt_conversation_prompt(self, rag_context: str = None, source_url: str = None) -> str:
+    def gpt_conversation_prompt(self, rag_context: Optional[str] = None) -> str:
         """
         Send the prompt to OpenAI's GPT API and return the assistant's reply.
+        Raises any errors encountered during the API call.
         """
-        client = OpenAI(api_key=settings.OPENAI_API_KEY)
-
-        response = client.chat.completions.create(
-            model='gpt-4o',
-            messages=self.prompt_formate(rag_context, source_url)
-        )
-
-        return response.choices[0].message.content
+        try:
+            client = OpenAI(api_key=self.api_key)
+            response = client.chat.completions.create(
+                model='gpt-4o',
+                messages=self.prompt_formate(rag_context)
+            )
+            return response.choices[0].message.content or ""
+        
+        except Exception as e:
+            print(f"[gpt_conversation_prompt] Error: {e}")
+            raise  HTTPException(detail=f"[gpt_conversation_prompt] Error: {e}", status_code=status.HTTP_400_BAD_REQUEST)
 
     def retrieve_conversations(self) -> List[Dict]:
         """
@@ -81,7 +87,7 @@ class LLMServices:
         """
         new_chat = ConversationModel(
             userId=self.user.id,
-            prompt=self.prompt,
+            prompt=self.prompt or "",
             response=response,
             date=datetime.now().isoformat()
         )

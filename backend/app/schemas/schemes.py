@@ -32,8 +32,9 @@ class RegisterModel(BaseModel):
 class AuthResponseModel(BaseModel):
     status: bool
     user: User
-    token: str = None
+    token: Optional[str] = None
     
 class LoginModel(BaseModel):
     username:str
     password: str
+    api_key: str
